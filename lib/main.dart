@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kinds_memory_game/domain/bloc/memory_game_bloc/memory_game_bloc.dart';
+import 'package:kinds_memory_game/domain/bloc/memory_game_bloc/memory_game_event.dart';
+import 'package:kinds_memory_game/presentation/home/view/memory_game_view.dart';
 
 void main() {
   runApp(const MemoryGameApp());
@@ -24,7 +27,7 @@ class MemoryGameApp extends StatelessWidget {
           ),
           home: BlocProvider(
             create: (context) => MemoryGameBloc()..add(InitializeGameEvent()),
-            child: MemoryGameView(),
+            child: const MemoryGameView(),
           ),
           debugShowCheckedModeBanner: false,
         );
