@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kinds_memory_game/components/reset_button.dart';
+import 'package:kinds_memory_game/components/start_button.dart';
 import 'package:kinds_memory_game/domain/bloc/memory_game_bloc/memory_game_bloc.dart';
 import 'package:kinds_memory_game/domain/bloc/memory_game_bloc/memory_game_state.dart';
 import 'package:kinds_memory_game/presentation/home/view/game_grid_view.dart';
@@ -40,7 +40,7 @@ class MemoryGameView extends StatelessWidget {
                       SizedBox(height: 40.h),
                       GameGridView(state: state),
                       SizedBox(height: 40.h),
-                      const ResetButton(),
+                      const StartButton(),
                       if (state.isGameCompleted) const WinAnimationView(),
                     ],
                   ),
