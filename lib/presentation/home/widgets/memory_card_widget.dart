@@ -92,19 +92,6 @@ class _MemoryCardWidgetState extends State<MemoryCardWidget>
                     color: _getBorderColor(),
                     width: 1.5,
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      blurRadius: 8,
-                      offset: const Offset(0, 4),
-                    ),
-                    if (widget.card.isMatched)
-                      BoxShadow(
-                        color: widget.card.color.withOpacity(0.3),
-                        blurRadius: 20,
-                        spreadRadius: 2,
-                      ),
-                  ],
                 ),
                 child: isShowingFront ? _buildCardBack() : _buildCardFront(),
               ),
@@ -119,20 +106,13 @@ class _MemoryCardWidgetState extends State<MemoryCardWidget>
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            const Color(0xFF1E3A8A).withOpacity(0.8),
-            const Color(0xFF581C87).withOpacity(0.6),
+            Color(0xFF1F1C4D),
+            Color(0xFF272454),
           ],
-        ),
-      ),
-      child: Center(
-        child: Icon(
-          Icons.psychology,
-          size: 24.sp,
-          color: Colors.white.withOpacity(0.3),
         ),
       ),
     );
@@ -150,14 +130,19 @@ class _MemoryCardWidgetState extends State<MemoryCardWidget>
               widget.card.icon,
               size: 32.sp,
               color: widget.card.color,
-              shadows: widget.card.isMatched
-                  ? [
-                      Shadow(
-                        color: Colors.white.withOpacity(0.6),
-                        blurRadius: 10,
-                      ),
-                    ]
-                  : null,
+              shadows: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 8,
+                  offset: const Offset(0, 4),
+                ),
+                if (widget.card.isMatched)
+                  BoxShadow(
+                    color: widget.card.color.withOpacity(0.3),
+                    blurRadius: 20,
+                    spreadRadius: 2,
+                  ),
+              ],
             ),
           );
         },
@@ -167,21 +152,21 @@ class _MemoryCardWidgetState extends State<MemoryCardWidget>
 
   Color _getCardColor() {
     if (widget.card.isMatched) {
-      return const Color(0xFF312E81).withOpacity(0.7);
+      return const Color(0xFF362D74);
     } else if (widget.card.isFlipped) {
-      return const Color(0xFF3730A3).withOpacity(0.7);
+      return const Color(0xFF2F257E);
     } else {
-      return const Color(0xFF1E1B4B).withOpacity(0.8);
+      return const Color(0xFF1E1B4B);
     }
   }
 
   Color _getBorderColor() {
     if (widget.card.isMatched) {
-      return widget.card.color.withOpacity(0.8);
+      return const Color(0xFF5858B2);
     } else if (widget.card.isFlipped) {
-      return const Color(0xFF6366F1).withOpacity(0.8);
+      return const Color(0xFF6366F1);
     } else {
-      return const Color(0xFF1E3A8A).withOpacity(0.6);
+      return const Color(0xFF1E3A8A);
     }
   }
 }
