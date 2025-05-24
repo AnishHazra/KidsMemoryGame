@@ -15,12 +15,12 @@ class MemoryGameBloc extends Bloc<MemoryGameEvent, MemoryGameState> {
   }
 
   static const List<Map<String, dynamic>> _iconConfigs = [
-    {'icon': Icons.favorite, 'color': Colors.red},
-    {'icon': Icons.star, 'color': Colors.amber},
-    {'icon': Icons.wb_sunny, 'color': Colors.yellow},
-    {'icon': Icons.nightlight_round, 'color': Colors.purple},
-    {'icon': Icons.cloud, 'color': Colors.blue},
-    {'icon': Icons.local_florist, 'color': Colors.green},
+    {'icon': Icons.favorite_border, 'color': Colors.red},
+    {'icon': Icons.star_border, 'color': Colors.amber},
+    {'icon': Icons.wb_sunny_outlined, 'color': Colors.yellow},
+    {'icon': Icons.nightlight_outlined, 'color': Colors.purple},
+    {'icon': Icons.cloud_outlined, 'color': Colors.blue},
+    {'icon': Icons.local_florist_outlined, 'color': Colors.green},
   ];
 
   Future<void> _onInitializeGame(
